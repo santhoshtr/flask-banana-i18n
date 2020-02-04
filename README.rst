@@ -1,5 +1,5 @@
 Flask-Banana
-=========
+============
 
 Localize your Flask application using the banana_ file format, popularized by
 MediaWiki_.
