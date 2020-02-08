@@ -1,0 +1,4 @@
+{
+  "test-message": "German message",
+  "test-params": "Parameter in German: %(foo)s"
+}
