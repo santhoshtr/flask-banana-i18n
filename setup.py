@@ -6,7 +6,7 @@ setup(
     packages=['flask_banana'],
     package_data={'flask_banana': ['py.typed']},
     url='https://git.legoktm.com/legoktm/flask-banana',
-    python_requires='>=3.4',
+    python_requires='>=3.5',
     install_requires=['Flask', 'banana-i18n'],
     license='GPL-3.0-or-later',
     author='Kunal Mehta',
