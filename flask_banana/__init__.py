@@ -16,7 +16,7 @@
 from typing import Optional
 
 from banana_i18n import BananaI18n
-from flask import current_app
+from flask import Flask, current_app
 try:
     from flask_uls import ULS
 except ImportError:
@@ -31,7 +31,7 @@ class Banana:
         if app is not None:
             self.init_app(app, messagesdir, uls)
 
-    def init_app(self, app, messagesdir, uls):
+    def init_app(self, app: Flask, messagesdir, uls: Optional[ULS] = None):
         app.config.setdefault('BANANA_DEFAULT_LANGUAGE', 'en')
         self.banana = BananaI18n(messagesdir)
         self.uls = uls
@@ -39,7 +39,7 @@ class Banana:
             app.config['ULS_ENABLED_LANGUAGES'] = self.banana.known_languages()
 
         @app.context_processor
-        def inject_to_templates():
+        def inject_to_templates() -> dict:
             return {
                 '_': self.translate,
             }
