@@ -24,6 +24,7 @@ from pathlib import Path
 @pytest.fixture()
 def client():
     app = Flask(__name__)
+    app.config['TESTING'] = True
     banana = Banana(app, Path(__file__).resolve().parent / 'i18n')
 
     @app.route('/language')
