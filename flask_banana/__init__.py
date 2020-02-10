@@ -20,13 +20,13 @@ from flask import Flask, current_app
 try:
     from flask_uls import ULS
 except ImportError:
-    ULS = None
+    ULS = None  # type: ignore
 
 
 class Banana:
     def __init__(self, app=None, messagesdir=None, uls=None):
         self.banana = None  # type: Optional[BananaI18n]
-        self.uls = None  # type: ULS
+        self.uls = None  # type: Optional[ULS]
         self._language = None
         if app is not None:
             self.init_app(app, messagesdir, uls)
