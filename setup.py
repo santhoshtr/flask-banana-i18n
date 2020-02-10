@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='Flask-Banana',
-    version='0.1.1',
+    version='0.1.2',
     packages=['flask_banana'],
     package_data={'flask_banana': ['py.typed']},
     url='https://git.legoktm.com/legoktm/flask-banana',
